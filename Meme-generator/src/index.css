@@ -1,0 +1,19 @@
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Karla:wght@300&display=swap');
+
+:root {
+  font-family: 'Inter',sans-serif;
+  
+  
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
