@@ -59,8 +59,8 @@ function MemeInput(){
                     />
                     <button onClick={GenerateMemeImage} type="button">Get a new meme image🖼️</button>
                 </div>
-                <div>
-                    <img src={Meme.randomImage} alt="sample meme" className="Meme-photo"/> 
+                <div className="Meme-photo">
+                    <img src={Meme.randomImage} alt="sample meme" /> 
                     <h2 className="meme--text top">{Meme.topText}</h2>
                     <h2 className="meme--text bottom">{Meme.bottomText}</h2>
                 </div>  

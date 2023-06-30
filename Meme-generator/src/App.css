@@ -52,14 +52,15 @@ button{
   cursor: pointer;
 }
 .Meme-body{
+  
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .Meme-photo{
-  margin-top:0px;
-  width:100%;
+  position:relative;
+  
 }
 
 
