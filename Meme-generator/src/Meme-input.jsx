@@ -15,27 +15,50 @@ function MemeInput(){
     }
     
     const [allMemeImages, setAllMemeImages]=React.useState(MemeData)
-    function GenerateMeme(){
-        Randomnumber()
-        setMeme(prevmeme=>{
-            const url = allMemeImages.data.memes[random].url
-            return{
-                ...prevmeme,
-                randomImage:url
-            }
-        })
-    }
+    function handleOnChange(event){
+        const {name,value}=event.target 
+            setMeme(prevmeme=>{
+                return{
+                    ...prevmeme,
+                    [name]:value,
+                }
+            })
+        }
+    function GenerateMemeImage(){
+        const url = allMemeImages.data.memes[random].url
+            Randomnumber()
+            setMeme(prevmeme=>{
+                return{
+                    ...prevmeme,
+                    randomImage:url,
+                }
+            })
+        }
 
-    return(
-        <div className="Meme-body">
-            <div className="Meme-input">
-                <input id='meme' name='meme' placeholder="Add meme text top"/>
-                <input id='meme' name='meme' placeholder="Add meme text bottom"/>
+        return(
+            <div className="Meme-body">
+                <div className="Meme-input">
+                    <input 
+                        name='topText'
+                        value={Meme.topText}
+                        onChange={handleOnChange}
+                        placeholder="Add meme text top"
+                    />
+                    <input 
+                        name='bottomText'
+                        value={Meme.bottomText} 
+                        onChange={handleOnChange}
+                        placeholder="Add meme text bottom"
+                    />
+                    <button onClick={GenerateMemeImage} type="button">Get a new meme image🖼️</button>
+                </div>
+                <div>
+                    <img src={Meme.randomImage} alt="sample meme" className="Meme-photo"/> 
+                    <h2 className="meme--text top">{Meme.topText}</h2>
+                    <h2 className="meme--text bottom">{Meme.bottomText}</h2>
+                </div>  
+                
             </div>
-            <button onClick={GenerateMeme} type="button">Get a new meme image🖼️</button>
-             <img src={Meme.randomImage} alt="sample meme" className="Meme-photo"/>   
-            
-        </div>
-    )
+        )
 }
 export default MemeInput
